@@ -34,5 +34,45 @@ B. Nội dung Bài tập 05:
 ###### Thêm trường sl xe và sl trong vào bảng ô
 ![sua bang o](https://github.com/user-attachments/assets/4ab5f1a5-59ef-48a6-af6c-41ed8f871b1e)
 
-##### Trigger
+##### Trigger:
 ###### tạo Trigger tự động tính số lượng xe trông ô
+###### Trigger chạy khi nhập bản ghi cho bảng Vitrixe
+```sql
+CREATE TRIGGER TR_AfterInsertViTriXe
+ON dbo.vitrixe
+AFTER INSERT
+AS
+BEGIN
+    UPDATE o
+    SET
+        sl_xe = (SELECT COUNT(*) FROM dbo.vitrixe WHERE ma_o = inserted.ma_o),
+        sl_trong = 6 - (SELECT COUNT(*) FROM dbo.vitrixe WHERE ma_o = inserted.ma_o)
+    FROM o
+    INNER JOIN inserted ON o.ma_o = inserted.ma_o;
+END;
+GO
+
+CREATE TRIGGER TR_AfterDeleteViTriXe
+ON dbo.vitrixe
+AFTER DELETE
+AS
+BEGIN
+    UPDATE o
+    SET
+        sl_xe = o.sl_xe - (SELECT COUNT(*) FROM deleted WHERE deleted.ma_o = o.ma_o),
+        sl_trong = o.sl_trong + (SELECT COUNT(*) FROM deleted WHERE deleted.ma_o = o.ma_o)
+    FROM o
+    INNER JOIN deleted ON o.ma_o = deleted.ma_o;
+END;
+GO
+```
+##### chạy thử:
+###### nhập giá trị cho bảng
+![nhap gtri thu](https://github.com/user-attachments/assets/a05164fa-50cb-417b-810d-9ebec8742dde)
+###### kết quả:
+![nhap gtri thu - trigger hd](https://github.com/user-attachments/assets/bdc2b0f2-ccd5-449d-86f3-0f451eb165d1)
+###### chạy thử lần 2:
+![nhap gtri thu 2](https://github.com/user-attachments/assets/acf16415-e679-4c5f-981b-fdeea98d2fdb)
+![nhap gtri thu - trigger hd 2](https://github.com/user-attachments/assets/74406ee7-0885-46ce-91a8-24401a7aa3fa)
+
+##### Kết luận: trigger hoạt động, giúp tự động tính toán số lượng xe từ các phần nhỏ, từ đó giúp tính tổng số xe
