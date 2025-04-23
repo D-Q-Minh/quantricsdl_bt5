@@ -1,5 +1,5 @@
 ## Bài tập 5
-###### SUBJECT: Trigger on mssql
+##### SUBJECT: Trigger on mssql
 A. Trình bày lại đầu bài của đồ án PT&TKHT:
 1. Mô tả bài toán của đồ án PT&TKHT, 
    đưa ra yêu cầu của bài toán đó
@@ -21,4 +21,10 @@ B. Nội dung Bài tập 05:
    nhằm để test sự hiệu quả của việc trigger auto run.
 5. Kết luận về Trigger đã giúp gì cho đồ án của em.
 ### Bài làm:
-#### 
+#### A.
+1. bài toán:
+   xây dựng hệ thống trông giữ xe
+2. Cơ sở dữ liệu:
+###### Các bảng, khóa chính, khóa ngoại
+![1](https://github.com/user-attachments/assets/4e0213bb-918b-4b01-b95d-8005c0c36862)
+###### Nhập 
