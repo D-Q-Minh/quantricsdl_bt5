@@ -21,10 +21,18 @@ B. Nội dung Bài tập 05:
    nhằm để test sự hiệu quả của việc trigger auto run.
 5. Kết luận về Trigger đã giúp gì cho đồ án của em.
 ### Bài làm:
-#### A.
-1. bài toán:
+##### 1. bài toán:
    xây dựng hệ thống trông giữ xe
-2. Cơ sở dữ liệu:
+   
+##### 2. Cơ sở dữ liệu:
 ###### Các bảng, khóa chính, khóa ngoại
-![1](https://github.com/user-attachments/assets/4e0213bb-918b-4b01-b95d-8005c0c36862)
-###### Nhập 
+![1](https://github.com/user-attachments/assets/2c2fcd74-fa41-47ec-a732-cddcb76483e9)
+###### Nhập dữ liệu vào các bảng
+![b1](https://github.com/user-attachments/assets/15f6fc6b-6111-4b3d-9c16-002e90a0010e)
+![b2](https://github.com/user-attachments/assets/c0d3e4d3-b916-4379-832b-36c69b31fa32)
+![image](https://github.com/user-attachments/assets/7fe25768-ac8d-412e-89a4-f92dee9fc6df)
+###### Thêm trường sl xe và sl trong vào bảng ô
+![sua bang o](https://github.com/user-attachments/assets/4ab5f1a5-59ef-48a6-af6c-41ed8f871b1e)
+
+##### Trigger
+###### tạo Trigger tự động tính số lượng xe trông ô
